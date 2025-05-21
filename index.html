@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Amulya Caroline</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 5vh auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px 25px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #f96854;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: #f96854;
+      font-size: 2rem;
+      margin-top: 10px;
+    }
+
+    .subtext {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 15px auto;
+      background-color: #f96854;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #e65548;
+    }
+
+    .quote-box {
+      display: none;
+      border: 2px solid #999;
+      padding: 15px;
+      font-style: italic;
+      font-size: 1.1rem;
+      background: #fdfdfd;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 90%;
+    }
+
+    .typing-letter {
+      display: none;
+      margin-top: 30px;
+      background: #fff8e7;
+      border-radius: 12px;
+      padding: 20px 25px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+      border: 1px dashed #c99966;
+      font-style: italic;
+      text-align: justify;
+      line-height: 1.6;
+      min-height: 200px;
+      white-space: pre-wrap;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 2vh 5vw;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .quote-box {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="https://drive.google.com/uc?export=download&id=1eRAouZGZpu5ACzgX3rzofzt4YO7BLGPC" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <!-- Friend's Image -->
+    <img src="https://i.postimg.cc/V5y5dPQk/shared-image.png" alt="Amulya Caroline" class="profile-pic" />
+
+    <h1>Happy Birthday, Ammu! 🎉</h1>
+
+    <p class="subtext">Dear Ammu, ❤️</p>
+    <p class="subtext">Wishing you a day filled with joy and laughter. May all your dreams come true! 🌟</p>
+
+    <p class="subtext bold">Birthday:</p>
+    <p class="subtext">26-May-2025</p>
+
+    <a class="button" onclick="revealWish()">Click for a Special Wish 💖</a>
+
+    <div class="quote-box" id="quoteBox">
+      "May your heart be filled with sunshine, your soul with love, and your year with endless laughter."
+    </div>
+
+    <div class="typing-letter" id="typingLetter"></div>
+  </div>
+
+  <script>
+    const message = `Our journey of friendship began in April 2024 — a simple chat in the auditorium, maybe over tea. From that little spark, something beautiful unfolded. We became friends... then best friends.
+
+Since then, you’ve stood beside me through everything — with your humble heart and trustworthy soul. You are more than a friend; you are my strength, my safe place, my family.
+
+In every high and low, I promise, I’ll always be there for you — cheering you on, supporting you, and making sure you never walk alone. You mean more to me than words can express.
+
+Happy Birthday ❤️ — to the one who brings light, laughter, and love into my life.
+
+                                 — "Your Best Friend, Azar S"`;
+
+    let index = 0;
+    let letterEl = null;
+
+    function revealWish() {
+      document.getElementById('quoteBox').style.display = 'block';
+      letterEl = document.getElementById('typingLetter');
+      letterEl.style.display = 'block';
+
+      const music = document.getElementById('bgMusic');
+      music.play();
+
+      startTyping();
+    }
+
+    function startTyping() {
+      index = 0;
+      letterEl.innerHTML = '';
+      typeNextChar();
+    }
+
+    function typeNextChar() {
+      if (index < message.length) {
+        letterEl.innerHTML += message.charAt(index);
+        index++;
+        setTimeout(typeNextChar, 35); // speed of typing
+      } else {
+        setTimeout(() => {
+          startTyping(); // restart after pause
+        }, 4000); // pause before repeating
+      }
+    }
+  </script>
+
+</body>
+</html>
